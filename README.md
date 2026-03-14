@@ -1,16 +1,42 @@
-# React + Vite
+# React Photo Gallery
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a Photo Gallery web application built using **React, Vite, and Tailwind CSS**.  
+The application fetches images from the **Picsum Photos API** and displays them in a responsive grid layout. Users can search photos by author name and mark photos as favourites.
 
-Currently, two official plugins are available:
+The goal of this project was to demonstrate the use of **React hooks, custom hooks, reducers, and performance optimization techniques** in a practical UI application.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Fetches photos from a public API
+- Displays photos in a responsive grid
+- Real-time search filtering by author name
+- Favourite photos using `useReducer`
+- Favourites persist using `localStorage`
+- Loading spinner while data is fetched
+- Error handling if API request fails
+- Infinite scrolling to load additional photos
+- Optimized rendering using `useCallback` and `useMemo`
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tech Stack
+
+**Frontend**
+
+- React
+- Vite
+- Tailwind CSS
+
+**React Hooks Used**
+
+- `useState`
+- `useReducer`
+- `useEffect`
+- `useCallback`
+- `useMemo`
+
+---
+
+## Project Structure
