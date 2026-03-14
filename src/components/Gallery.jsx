@@ -16,8 +16,12 @@ export default function Gallery() {
   }, []);
 
   const filteredPhotos = useMemo(() => {
-    return photos.filter((p) =>
-      p.author.toLowerCase().includes(search.toLowerCase()),
+    if (!search.trim()) return photos;
+
+    console.log(photos.length);
+
+    return photos.filter((photo) =>
+      photo.author.toLowerCase().includes(search.toLowerCase()),
     );
   }, [photos, search]);
 
@@ -49,9 +53,9 @@ export default function Gallery() {
 
       <>
         <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-          {filteredPhotos.map((photo) => (
+          {filteredPhotos.map((photo, index) => (
             <PhotoCard
-              key={photo.id}
+              key={`${photo.id}-${index}`}
               photo={photo}
               dispatch={dispatch}
               isFav={favourites.some((p) => p.id === photo.id)}

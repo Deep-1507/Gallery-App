@@ -33,21 +33,21 @@ export function useFetchPhotos() {
     fetchPhotos(page);
   }, [page, fetchPhotos]);
 
-  useEffect(() => {
-    function handleScroll() {
-      const nearBottom =
-        window.innerHeight + window.scrollY >=
-        document.body.offsetHeight - 200;
+useEffect(() => {
+  function handleScroll() {
+    const nearBottom =
+      window.innerHeight + window.scrollY >=
+      document.body.offsetHeight - 200;
 
-      if (nearBottom && !loadingMore) {
-        setPage((prev) => prev + 1);
-      }
+    if (nearBottom && !loadingMore && !loading) {
+      setPage((prev) => prev + 1);
     }
+  }
 
-    window.addEventListener("scroll", handleScroll);
+  window.addEventListener("scroll", handleScroll);
 
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [loadingMore]);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, [loadingMore, loading]);
 
   return { photos, loading, loadingMore, error };
 }
