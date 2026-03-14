@@ -37,6 +37,4 @@ The goal of this project was to demonstrate the use of **React hooks, custom hoo
 - `useCallback`
 - `useMemo`
 
----
-
 ## Project Structure
